@@ -108,10 +108,12 @@ open class CircularPageViewController: UIViewController {
     private func getBulletAtIndex(index : Int) -> CAShapeLayer? {
         let count : Int = (pagerControlView?.layer.sublayers?.count)!;
         for i in 0..<count {
-            let tmp : CALayer = pagerControlView!.layer.sublayers![i];
-            NSLog("%s == %s", tmp, String.init(format: "bullet_%d", index));
-            if tmp.name == String.init(format: "bullet_%d", index) {
-                return tmp as? CAShapeLayer;
+            let tmp : CALayer = (pagerControlView?.layer.sublayers?[i])!;
+            if tmp.name != nil {
+                NSLog("%@ == %@", tmp.name!, String.init(format: "bullet_%d", i));
+                if tmp.name == String.init(format: "bullet_%d", i) {
+                    return tmp as? CAShapeLayer;
+                }
             }
         }
         return nil;

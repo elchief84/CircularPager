@@ -1,0 +1,794 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		094F487107111FB493D7783D64C72E1B /* Pods-CircularPager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E7A731E70A1A7B114C2C1BFFCFA4E0 /* Pods-CircularPager_Tests-dummy.m */; };
+		1835C096B5120854FE50851504200606 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		3EBC775BB8631DA6872B5A5102A0FDB7 /* CircularPager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DC012F03B2C3E8717C68C81D1BCF827 /* CircularPager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E98A287EA601E4EAA6830B3DFB9EE99 /* CircularPager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A0757F40D8D5AC8B7C49C153EBC3B /* CircularPager-dummy.m */; };
+		68EB0C6CEC80B35A43BBF1E7A64D0F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		6905AC4A0FD2B796C5A0E667D6214C3D /* Pods-CircularPager_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8EC8B6FE11BB5A38432319381E0AC1 /* Pods-CircularPager_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A877BA1240D82123FC033B610237373 /* Pods-CircularPager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 83EDCB8CD4ABC28B02E1343DC7620CE0 /* Pods-CircularPager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		909EFE9D21F9BE84006B6A5C /* CircularPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909EFE9C21F9BE84006B6A5C /* CircularPageViewController.swift */; };
+		909EFE9F21F9D0D0006B6A5C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909EFE9E21F9D0D0006B6A5C /* UIColor+Hex.swift */; };
+		909EFEA121F9EC4F006B6A5C /* CircularPagerCommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909EFEA021F9EC4F006B6A5C /* CircularPagerCommons.swift */; };
+		97B842223EBCDED8BB7BA70D21E84FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		BABA4E8A03A008AFA7CC4F9652A48023 /* Pods-CircularPager_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DE56E138ABEBD2F3F2569434FCD894 /* Pods-CircularPager_Example-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2170E1C6A9FD7B5A984D7B4674540011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 727F49F8069B87E8EE07C1FFD9498225;
+			remoteInfo = "Pods-CircularPager_Example";
+		};
+		EAA4D7E63AEB8DEBF7D5201DE36E8140 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24F93F949E76CB06C2DBB7FC1B01640A;
+			remoteInfo = CircularPager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09A8E1F4309A6699F9709E46B07FF22F /* Pods-CircularPager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularPager_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		09B1B243555B504B1F4E7CA2FEB99738 /* CircularPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircularPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E875E8DD57D1EA4D09BEA8BD56A516E /* Pods-CircularPager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularPager_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2556643DE01EE7E9B86C59999DEE238C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3D25259C4F6D81FA78CE5418F45D107D /* Pods-CircularPager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CircularPager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3D8EC8B6FE11BB5A38432319381E0AC1 /* Pods-CircularPager_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CircularPager_Example-umbrella.h"; sourceTree = "<group>"; };
+		3DC012F03B2C3E8717C68C81D1BCF827 /* CircularPager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircularPager-umbrella.h"; sourceTree = "<group>"; };
+		3DCA0CD18CFEECC28868238C012C85BF /* Pods-CircularPager_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularPager_Tests-resources.sh"; sourceTree = "<group>"; };
+		49DE56E138ABEBD2F3F2569434FCD894 /* Pods-CircularPager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CircularPager_Example-dummy.m"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5DEDE83BF2A7AFCF2326FBC2CEA18E1F /* Pods-CircularPager_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularPager_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		5EEC540EB36A2491D5FAA1D00D54801B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62B199945BCA7313C3281674A87CE186 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631425A81070341786392016DE5E6341 /* Pods-CircularPager_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CircularPager_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		693A0757F40D8D5AC8B7C49C153EBC3B /* CircularPager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CircularPager-dummy.m"; sourceTree = "<group>"; };
+		6EB5CBC0550D1837E7F2C739232DE3C9 /* Pods-CircularPager_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CircularPager_Example-resources.sh"; sourceTree = "<group>"; };
+		7590B2929645B4B438E01C1806E6EB3A /* CircularPager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CircularPager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7C1C1917F81E50FE83741BA7298DE49D /* Pods-CircularPager_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CircularPager_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7F9D7435E9129709F0CFF6811A7B7BF1 /* CircularPager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircularPager-prefix.pch"; sourceTree = "<group>"; };
+		80C749F3DEFB8996E2BA53D6936EB9A6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83EDCB8CD4ABC28B02E1343DC7620CE0 /* Pods-CircularPager_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CircularPager_Tests-umbrella.h"; sourceTree = "<group>"; };
+		85DA7EE5C08EEDA243B7DDE22FED5E33 /* Pods-CircularPager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularPager_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8B9A4EF59D5997C1E67339F4D7B6DBEE /* CircularPager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CircularPager.xcconfig; sourceTree = "<group>"; };
+		909EFE9C21F9BE84006B6A5C /* CircularPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircularPageViewController.swift; path = CircularPager/Classes/CircularPageViewController.swift; sourceTree = "<group>"; };
+		909EFE9E21F9D0D0006B6A5C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "CircularPager/Classes/Extensions/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		909EFEA021F9EC4F006B6A5C /* CircularPagerCommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircularPagerCommons.swift; path = CircularPager/Classes/Utils/CircularPagerCommons.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3D300D0A3667342285431FC723F8CE7 /* Pods-CircularPager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularPager_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A757653E1DA7F40074BF383BFEE3ED5D /* Pods-CircularPager_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CircularPager_Tests.modulemap"; sourceTree = "<group>"; };
+		C0E08A2CDD08D851D2177A13F109823B /* Pods-CircularPager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CircularPager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0FC7E5BE7B9DE2F0AAE5E41FE35ACBE /* Pods-CircularPager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CircularPager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C28B6E850CB8220D47A04DE6154667D4 /* Pods_CircularPager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularPager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8D41DC892666618CF5B7DC5E893822A /* CircularPager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CircularPager.modulemap; sourceTree = "<group>"; };
+		C99B5852C37266FC8319A0A770832252 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D47618A8C8E7821096A6C375E05BAA09 /* Pods-CircularPager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CircularPager_Example.modulemap"; sourceTree = "<group>"; };
+		D4AFB32F0FE5762D0AF372BE231A794B /* Pods_CircularPager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularPager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E7A731E70A1A7B114C2C1BFFCFA4E0 /* Pods-CircularPager_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CircularPager_Tests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29FE96F8CE551A2056A0B14C2E4A48ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97B842223EBCDED8BB7BA70D21E84FBB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E6E54ECDF7A709381B4C8369F471AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1835C096B5120854FE50851504200606 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C4F4643307AE5A05FFE672DC518657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68EB0C6CEC80B35A43BBF1E7A64D0F83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1701A8EC739C07FF65D351B6FAA79D64 /* Pods-CircularPager_Example */ = {
+			isa = PBXGroup;
+			children = (
+				80C749F3DEFB8996E2BA53D6936EB9A6 /* Info.plist */,
+				D47618A8C8E7821096A6C375E05BAA09 /* Pods-CircularPager_Example.modulemap */,
+				631425A81070341786392016DE5E6341 /* Pods-CircularPager_Example-acknowledgements.markdown */,
+				C0FC7E5BE7B9DE2F0AAE5E41FE35ACBE /* Pods-CircularPager_Example-acknowledgements.plist */,
+				49DE56E138ABEBD2F3F2569434FCD894 /* Pods-CircularPager_Example-dummy.m */,
+				1E875E8DD57D1EA4D09BEA8BD56A516E /* Pods-CircularPager_Example-frameworks.sh */,
+				6EB5CBC0550D1837E7F2C739232DE3C9 /* Pods-CircularPager_Example-resources.sh */,
+				3D8EC8B6FE11BB5A38432319381E0AC1 /* Pods-CircularPager_Example-umbrella.h */,
+				85DA7EE5C08EEDA243B7DDE22FED5E33 /* Pods-CircularPager_Example.debug.xcconfig */,
+				A3D300D0A3667342285431FC723F8CE7 /* Pods-CircularPager_Example.release.xcconfig */,
+			);
+			name = "Pods-CircularPager_Example";
+			path = "Target Support Files/Pods-CircularPager_Example";
+			sourceTree = "<group>";
+		};
+		2F0109B2579B6ACE18202C67676C401C /* Pods-CircularPager_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5EEC540EB36A2491D5FAA1D00D54801B /* Info.plist */,
+				A757653E1DA7F40074BF383BFEE3ED5D /* Pods-CircularPager_Tests.modulemap */,
+				3D25259C4F6D81FA78CE5418F45D107D /* Pods-CircularPager_Tests-acknowledgements.markdown */,
+				7C1C1917F81E50FE83741BA7298DE49D /* Pods-CircularPager_Tests-acknowledgements.plist */,
+				D7E7A731E70A1A7B114C2C1BFFCFA4E0 /* Pods-CircularPager_Tests-dummy.m */,
+				5DEDE83BF2A7AFCF2326FBC2CEA18E1F /* Pods-CircularPager_Tests-frameworks.sh */,
+				3DCA0CD18CFEECC28868238C012C85BF /* Pods-CircularPager_Tests-resources.sh */,
+				83EDCB8CD4ABC28B02E1343DC7620CE0 /* Pods-CircularPager_Tests-umbrella.h */,
+				C0E08A2CDD08D851D2177A13F109823B /* Pods-CircularPager_Tests.debug.xcconfig */,
+				09A8E1F4309A6699F9709E46B07FF22F /* Pods-CircularPager_Tests.release.xcconfig */,
+			);
+			name = "Pods-CircularPager_Tests";
+			path = "Target Support Files/Pods-CircularPager_Tests";
+			sourceTree = "<group>";
+		};
+		45E81E1ED21ED61EAAC7DC85556CAEF8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8D41DC892666618CF5B7DC5E893822A /* CircularPager.modulemap */,
+				8B9A4EF59D5997C1E67339F4D7B6DBEE /* CircularPager.xcconfig */,
+				693A0757F40D8D5AC8B7C49C153EBC3B /* CircularPager-dummy.m */,
+				7F9D7435E9129709F0CFF6811A7B7BF1 /* CircularPager-prefix.pch */,
+				3DC012F03B2C3E8717C68C81D1BCF827 /* CircularPager-umbrella.h */,
+				62B199945BCA7313C3281674A87CE186 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CircularPager";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6BF26F5AD941EC62C68A2079CCCBC86B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1701A8EC739C07FF65D351B6FAA79D64 /* Pods-CircularPager_Example */,
+				2F0109B2579B6ACE18202C67676C401C /* Pods-CircularPager_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		75BDB6A1138B46072E2360C09FCBD413 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09B1B243555B504B1F4E7CA2FEB99738 /* CircularPager.framework */,
+				D4AFB32F0FE5762D0AF372BE231A794B /* Pods_CircularPager_Example.framework */,
+				C28B6E850CB8220D47A04DE6154667D4 /* Pods_CircularPager_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E430DB2CF3B3BB7F783DD7E533D52ADA /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				75BDB6A1138B46072E2360C09FCBD413 /* Products */,
+				6BF26F5AD941EC62C68A2079CCCBC86B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A348C884F829F2D3B2C5CB9CE5C8C69F /* CircularPager */ = {
+			isa = PBXGroup;
+			children = (
+				909EFE9C21F9BE84006B6A5C /* CircularPageViewController.swift */,
+				909EFEA021F9EC4F006B6A5C /* CircularPagerCommons.swift */,
+				909EFE9E21F9D0D0006B6A5C /* UIColor+Hex.swift */,
+				C6CDD700A34B8EF65022C28A3A689BB5 /* Pod */,
+				45E81E1ED21ED61EAAC7DC85556CAEF8 /* Support Files */,
+			);
+			name = CircularPager;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6CDD700A34B8EF65022C28A3A689BB5 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7590B2929645B4B438E01C1806E6EB3A /* CircularPager.podspec */,
+				C99B5852C37266FC8319A0A770832252 /* LICENSE */,
+				2556643DE01EE7E9B86C59999DEE238C /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E430DB2CF3B3BB7F783DD7E533D52ADA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A348C884F829F2D3B2C5CB9CE5C8C69F /* CircularPager */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7EB53E88F97B9503E8D76DC390C6C8DD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A877BA1240D82123FC033B610237373 /* Pods-CircularPager_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEA40625A5AD3DCB94F555DEAF2AD74E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6905AC4A0FD2B796C5A0E667D6214C3D /* Pods-CircularPager_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E06D58D9E45D439B6B559BC655B1D8E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBC775BB8631DA6872B5A5102A0FDB7 /* CircularPager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		24F93F949E76CB06C2DBB7FC1B01640A /* CircularPager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7079384E208C88A8E6A1DC04412A8D30 /* Build configuration list for PBXNativeTarget "CircularPager" */;
+			buildPhases = (
+				E06D58D9E45D439B6B559BC655B1D8E7 /* Headers */,
+				4801EA339927C1DFD4E92FA00C30AEBA /* Sources */,
+				29FE96F8CE551A2056A0B14C2E4A48ED /* Frameworks */,
+				03D68D3E0128FFD1C47C8E90E2C81C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircularPager;
+			productName = CircularPager;
+			productReference = 09B1B243555B504B1F4E7CA2FEB99738 /* CircularPager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		727F49F8069B87E8EE07C1FFD9498225 /* Pods-CircularPager_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EFB2DE87CAF44C99CE449A34CB7D898 /* Build configuration list for PBXNativeTarget "Pods-CircularPager_Example" */;
+			buildPhases = (
+				AEA40625A5AD3DCB94F555DEAF2AD74E /* Headers */,
+				69F41370DC0B53D6B4DE9D20D39A3BBD /* Sources */,
+				D3C4F4643307AE5A05FFE672DC518657 /* Frameworks */,
+				EDE485E155599F8ED2DA77904178F995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4470B5FCD9FCE61F06B5DE4183849338 /* PBXTargetDependency */,
+			);
+			name = "Pods-CircularPager_Example";
+			productName = "Pods-CircularPager_Example";
+			productReference = D4AFB32F0FE5762D0AF372BE231A794B /* Pods_CircularPager_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F195222DE6BD31EA7D3D73600939D476 /* Pods-CircularPager_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF3A7FFF3C1DE028CBE038B04850B60F /* Build configuration list for PBXNativeTarget "Pods-CircularPager_Tests" */;
+			buildPhases = (
+				7EB53E88F97B9503E8D76DC390C6C8DD /* Headers */,
+				241919A78141703E16F44D3D496C1B4B /* Sources */,
+				7E6E54ECDF7A709381B4C8369F471AC7 /* Frameworks */,
+				83CF5B57BC2922F6FE22409C0FA8EA9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				519D65A3860BCCB52C59DD3748A9CA27 /* PBXTargetDependency */,
+			);
+			name = "Pods-CircularPager_Tests";
+			productName = "Pods-CircularPager_Tests";
+			productReference = C28B6E850CB8220D47A04DE6154667D4 /* Pods_CircularPager_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					24F93F949E76CB06C2DBB7FC1B01640A = {
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 75BDB6A1138B46072E2360C09FCBD413 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24F93F949E76CB06C2DBB7FC1B01640A /* CircularPager */,
+				727F49F8069B87E8EE07C1FFD9498225 /* Pods-CircularPager_Example */,
+				F195222DE6BD31EA7D3D73600939D476 /* Pods-CircularPager_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03D68D3E0128FFD1C47C8E90E2C81C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83CF5B57BC2922F6FE22409C0FA8EA9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE485E155599F8ED2DA77904178F995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		241919A78141703E16F44D3D496C1B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094F487107111FB493D7783D64C72E1B /* Pods-CircularPager_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4801EA339927C1DFD4E92FA00C30AEBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				909EFE9F21F9D0D0006B6A5C /* UIColor+Hex.swift in Sources */,
+				909EFEA121F9EC4F006B6A5C /* CircularPagerCommons.swift in Sources */,
+				909EFE9D21F9BE84006B6A5C /* CircularPageViewController.swift in Sources */,
+				5E98A287EA601E4EAA6830B3DFB9EE99 /* CircularPager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F41370DC0B53D6B4DE9D20D39A3BBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BABA4E8A03A008AFA7CC4F9652A48023 /* Pods-CircularPager_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4470B5FCD9FCE61F06B5DE4183849338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CircularPager;
+			target = 24F93F949E76CB06C2DBB7FC1B01640A /* CircularPager */;
+			targetProxy = EAA4D7E63AEB8DEBF7D5201DE36E8140 /* PBXContainerItemProxy */;
+		};
+		519D65A3860BCCB52C59DD3748A9CA27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-CircularPager_Example";
+			target = 727F49F8069B87E8EE07C1FFD9498225 /* Pods-CircularPager_Example */;
+			targetProxy = 2170E1C6A9FD7B5A984D7B4674540011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56A05ADD3BABDA1B56D1F979845809B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		88D0CD9FC1BBA6445AEC05888CC02604 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A8E1F4309A6699F9709E46B07FF22F /* Pods-CircularPager_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CircularPager_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CircularPager_Tests/Pods-CircularPager_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5FB2E394E5A2B1D84E68170C010B096 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E08A2CDD08D851D2177A13F109823B /* Pods-CircularPager_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CircularPager_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CircularPager_Tests/Pods-CircularPager_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D8497EB7F112DBA3A7CBDE809DFF847B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B9A4EF59D5997C1E67339F4D7B6DBEE /* CircularPager.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CircularPager/CircularPager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CircularPager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CircularPager/CircularPager.modulemap";
+				PRODUCT_MODULE_NAME = CircularPager;
+				PRODUCT_NAME = CircularPager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DBFDF8B4B92B45CD438D59C09F7C6302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B9A4EF59D5997C1E67339F4D7B6DBEE /* CircularPager.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CircularPager/CircularPager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CircularPager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CircularPager/CircularPager.modulemap";
+				PRODUCT_MODULE_NAME = CircularPager;
+				PRODUCT_NAME = CircularPager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3C1FF192A433E6750B86D305AD3865A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85DA7EE5C08EEDA243B7DDE22FED5E33 /* Pods-CircularPager_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CircularPager_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CircularPager_Example/Pods-CircularPager_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F472055509009BB5356C1CAE65616DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D300D0A3667342285431FC723F8CE7 /* Pods-CircularPager_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CircularPager_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CircularPager_Example/Pods-CircularPager_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEFDB93BF207328A04F1220475D02C3B /* Debug */,
+				56A05ADD3BABDA1B56D1F979845809B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7079384E208C88A8E6A1DC04412A8D30 /* Build configuration list for PBXNativeTarget "CircularPager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBFDF8B4B92B45CD438D59C09F7C6302 /* Debug */,
+				D8497EB7F112DBA3A7CBDE809DFF847B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EFB2DE87CAF44C99CE449A34CB7D898 /* Build configuration list for PBXNativeTarget "Pods-CircularPager_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C1FF192A433E6750B86D305AD3865A /* Debug */,
+				F472055509009BB5356C1CAE65616DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF3A7FFF3C1DE028CBE038B04850B60F /* Build configuration list for PBXNativeTarget "Pods-CircularPager_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5FB2E394E5A2B1D84E68170C010B096 /* Debug */,
+				88D0CD9FC1BBA6445AEC05888CC02604 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -42,11 +42,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9E1AB8C8DC080515B5DF714F /* Pods-CircularPager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircularPager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircularPager_Example/Pods-CircularPager_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9E49FB945957079A4FB16D47 /* CircularPager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CircularPager.podspec; path = ../CircularPager.podspec; sourceTree = "<group>"; };
+		9E49FB945957079A4FB16D47 /* CircularPager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CircularPager.podspec; path = ../CircularPager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2A9F760B6506B9835A999C0 /* Pods_CircularPager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircularPager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D68ADCC6C1B601014B13B9 /* Pods-CircularPager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircularPager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircularPager_Tests/Pods-CircularPager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E525BC404BB0C180677DD979 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F85A70421BCAB4B4A74BD5F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E525BC404BB0C180677DD979 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F85A70421BCAB4B4A74BD5F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

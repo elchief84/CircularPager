@@ -1,0 +1,16 @@
+PODS:
+  - CircularPager (0.1.0)
+
+DEPENDENCIES:
+  - CircularPager (from `../`)
+
+EXTERNAL SOURCES:
+  CircularPager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CircularPager: 0a58afa4773aa49701c095c1666df192c49721a9
+
+PODFILE CHECKSUM: a2b295106c51e874e2c9193d356313530a7b876b
+
+COCOAPODS: 1.5.3

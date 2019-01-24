@@ -1,0 +1,6 @@
+framework module Pods_CircularPager_Tests {
+  umbrella header "Pods-CircularPager_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

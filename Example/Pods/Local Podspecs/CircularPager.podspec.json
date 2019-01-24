@@ -1,0 +1,22 @@
+{
+  "name": "CircularPager",
+  "version": "0.1.0",
+  "summary": "A short description of CircularPager.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vromano84/CircularPager",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vromano84": "vincenzo.romano@healthtouch.eu"
+  },
+  "source": {
+    "git": "https://github.com/vromano84/CircularPager.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CircularPager/Classes/**/*"
+}

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CircularPager
 
-class ViewController: UIViewController {
+class ViewController: CircularPageViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad();
+        
+        self.viewControllers = ["one", "two", "three"];
     }
 
     override func didReceiveMemoryWarning() {

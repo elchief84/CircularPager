@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CircularPager_Example' do
+  pod 'CircularPager', :path => '../'
+
+  target 'CircularPager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

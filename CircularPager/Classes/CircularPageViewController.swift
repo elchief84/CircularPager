@@ -10,7 +10,7 @@ import UIKit
 open class CircularPageViewController: UIViewController {
 
     public var currentPageIndex : Int = 0;
-    public var viewControllers : NSArray {
+    public var viewControllers : [UIViewController] {
         set{
             tmpViewControllers = newValue;
             self.invalidatePager();
@@ -20,30 +20,61 @@ open class CircularPageViewController: UIViewController {
         }
     };
     
-    private var tmpViewControllers : NSArray = [];
+    @IBInspectable var primaryColor : UIColor = UIColor.yellow;
+    @IBInspectable var secondaryColor : UIColor = UIColor.init(hexString: "#464646");
+    @IBInspectable var titleColor : UIColor = UIColor.init(hexString: "#000000");
+    @IBInspectable var titleFontName : String = "Exo-Bold";
+    
+    private var titleLabel : UILabel = UILabel.init();
+    private var tmpViewControllers : [UIViewController] = [];
     private var pagerControlView : UIView?;
     private var radius : CGFloat = 0.0;
     private var bulletsOnCircle : Int = 12;
     private var angle : Double = 0.0;
+    private var swipeLeft : UISwipeGestureRecognizer?;
+    private var swipeRight : UISwipeGestureRecognizer?;
+    
+    private let opacity : Float = 0.6;
+    private let minScale : CGFloat = 0.8;
 
     override open func viewDidLoad() {
         super.viewDidLoad()
         
         self.setup();
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
+        let frameworkBundle = Bundle(identifier: "org.cocoapods.CircularPager");
+        let resourcePath = frameworkBundle?.resourcePath?.appending("/CircularPager.bundle");
+        let resourceBundle = Bundle(path: resourcePath!);
+        let _ : Bool = UIFont.registerFont(bundle: resourceBundle!, fontName: "Exo-Bold", fontExtension: "ttf");
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
+        swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft?.direction = .left
+        self.view.addGestureRecognizer(swipeLeft!)
+        
+        swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight?.direction = .right
+        self.view.addGestureRecognizer(swipeRight!)
     }
     
     private func setup() -> Void {
         self.currentPageIndex = 0;
         self.drawCirclePager();
         self.drawBullets();
+        
+        titleLabel.frame = CGRect.init(x: 30, y: (pagerControlView?.frame.origin.y)! - 90, width: self.view.frame.size.width - 60, height: 80);
+        titleLabel.textAlignment = NSTextAlignment.center;
+        
+        titleLabel.textColor = titleColor;
+        titleLabel.font = UIFont.init(name: titleFontName, size: 24.0);
+        self.view.addSubview(titleLabel);
+        
+        if(viewControllers.count > 0){
+            titleLabel.text = viewControllers[currentPageIndex].title;
+            
+            let tmp : UIViewController = self.viewControllers[currentPageIndex];
+            self.view.insertSubview(tmp.view, at: 0);
+            self.addChildViewController(tmp);
+        }
     }
     
     private func invalidatePager() -> Void {
@@ -62,47 +93,11 @@ open class CircularPageViewController: UIViewController {
         shapeLayer.path = circlePath.cgPath
         
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor(hexString: "#464646").cgColor;
-        shapeLayer.lineWidth = 2.0
+        shapeLayer.strokeColor = secondaryColor.cgColor;
+        shapeLayer.lineWidth = 1.0
         
         pagerControlView!.layer.addSublayer(shapeLayer)
         self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: (-1 * Double.pi/2)).floatValue));
-    }
-    
-    @objc private func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        if gesture.direction == UISwipeGestureRecognizerDirection.right {
-            self.rotate(direction: CircularPagerDirection.Right);
-            self.changeSelectedPage(index: currentPageIndex - 1);
-        }else if gesture.direction == UISwipeGestureRecognizerDirection.left {
-            self.rotate(direction: CircularPagerDirection.Left);
-            self.changeSelectedPage(index: currentPageIndex + 1);
-        }
-    }
-    
-    private func rotate(direction : CircularPagerDirection) {
-        var rotAngle : Double = angle;
-        switch direction {
-            case CircularPagerDirection.Right:
-                rotAngle = angle * 1 ; break;
-            case CircularPagerDirection.Left:
-                rotAngle = angle * -1; break;
-        }
-        
-        UIView.animate(withDuration: 0.3) {
-            self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
-        };
-    }
-    
-    private func changeSelectedPage(index : Int) -> Void{
-        var tmp : CAShapeLayer? = self.getBulletAtIndex(index: currentPageIndex);
-        if tmp != nil {
-            self.setSelected(bullet: tmp!, isSelected: false);
-        }
-        currentPageIndex = index;
-        tmp = self.getBulletAtIndex(index: currentPageIndex);
-        if tmp != nil{
-            self.setSelected(bullet: tmp!, isSelected: true);
-        }
     }
     
     private func getBulletAtIndex(index : Int) -> CAShapeLayer? {
@@ -110,17 +105,12 @@ open class CircularPageViewController: UIViewController {
         for i in 0..<count {
             let tmp : CALayer = (pagerControlView?.layer.sublayers?[i])!;
             if tmp.name != nil {
-                NSLog("%@ == %@", tmp.name!, String.init(format: "bullet_%d", i));
-                if tmp.name == String.init(format: "bullet_%d", i) {
+                if tmp.name == String.init(format: "bullet_%d", index) {
                     return tmp as? CAShapeLayer;
                 }
             }
         }
         return nil;
-    }
-    
-    private func setSelected(bullet : CAShapeLayer, isSelected : Bool){
-        bullet.opacity = (isSelected) ? 1.0 : 0.3;
     }
     
     private func drawBullets() {
@@ -140,8 +130,10 @@ open class CircularPageViewController: UIViewController {
             
             if(index == currentPageIndex){
                 bullet.opacity = 1.0;
+                bullet.transform = CATransform3DMakeScale(1.0, 1.0, 1.0);
             }else{
-                bullet.opacity = 0.3;
+                bullet.opacity = opacity;
+                bullet.transform = CATransform3DMakeScale(minScale, minScale, 1.0);
             }
             
             pagerControlView!.layer.addSublayer(bullet);
@@ -149,13 +141,27 @@ open class CircularPageViewController: UIViewController {
     }
     
     private func createBullet() -> CAShapeLayer {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: 10, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true);
+        var circlePath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: 15, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true);
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
+        let shapeLayer = CAShapeLayer();
+        shapeLayer.path = circlePath.cgPath;
+        shapeLayer.fillColor = UIColor.clear.cgColor;
+        shapeLayer.strokeColor = secondaryColor.cgColor;
+        shapeLayer.lineWidth = 1;
+        shapeLayer.lineDashPattern = [3, 3];
         
-        shapeLayer.fillColor = UIColor.yellow.cgColor
-        shapeLayer.strokeColor = UIColor.clear.cgColor;
+        circlePath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: 10, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true);
+        let disc = CAShapeLayer();
+        disc.path = circlePath.cgPath;
+        disc.fillColor = primaryColor.cgColor;
+        disc.strokeColor = UIColor.clear.cgColor;
+        
+        shapeLayer.shadowColor = primaryColor.cgColor
+        shapeLayer.shadowRadius = 10.0
+        shapeLayer.shadowOpacity = 0.6
+        shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
+
+        shapeLayer.addSublayer(disc);
         
         return shapeLayer;
     }
@@ -168,6 +174,83 @@ open class CircularPageViewController: UIViewController {
         return CGPoint(x: x, y: y);
     }
 
+    @objc private func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        var direction : Int = 1;
+        if gesture.direction == UISwipeGestureRecognizerDirection.right {
+            self.rotate(direction: CircularPagerDirection.Right);
+            let index = (currentPageIndex > 0) ? currentPageIndex - 1 : (bulletsOnCircle - 1);
+            self.changeSelectedPage(index: index);
+            direction = 1;
+        }else if gesture.direction == UISwipeGestureRecognizerDirection.left {
+            self.rotate(direction: CircularPagerDirection.Left);
+            let index = (currentPageIndex + 1) % bulletsOnCircle;
+            self.changeSelectedPage(index: index);
+            direction = -1;
+        }
+        
+        if(viewControllers.count > 0){
+            let enter : UIViewController = self.viewControllers[currentPageIndex % self.viewControllers.count];
+            let exit = self.view.subviews[0];
+            
+            exit.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
+            self.view.insertSubview(enter.view, at: 1);
+            self.addChildViewController(enter);
+            enter.view.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
+            enter.view.transform = enter.view.transform.rotated(by: CGFloat(-self.angle * Double(direction)));
+            UIView.animate(withDuration: 0.3, animations: {
+                exit.transform = exit.transform.rotated(by: CGFloat(self.angle * Double(direction)));
+                enter.view.transform = enter.view.transform.rotated(by: CGFloat(self.angle * Double(direction)));
+            }) { (success) in
+                exit.removeFromSuperview();
+            }
+        }
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.titleLabel.alpha = 0.0;
+        }) { (success) in
+            if(self.viewControllers.count > 0){
+                self.titleLabel.text = self.viewControllers[self.currentPageIndex % self.viewControllers.count].title;
+            }
+            UIView.animate(withDuration: 0.15, animations: {
+                self.titleLabel.alpha = 1.0;
+            })
+        }
+    }
+    
+    private func rotate(direction : CircularPagerDirection) {
+        var rotAngle : Double = angle;
+        
+        switch direction {
+        case CircularPagerDirection.Right:
+            rotAngle = angle * 1 ;
+            break;
+        case CircularPagerDirection.Left:
+            rotAngle = angle * -1;
+            break;
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
+        }
+    }
+    
+    private func changeSelectedPage(index : Int) -> Void{
+        var tmp : CAShapeLayer? = self.getBulletAtIndex(index: currentPageIndex);
+        if tmp != nil {
+            self.setSelected(bullet: tmp!, isSelected: false);
+        }
+        currentPageIndex = index;
+        tmp = self.getBulletAtIndex(index: currentPageIndex);
+        if tmp != nil{
+            self.setSelected(bullet: tmp!, isSelected: true);
+        }
+    }
+    
+    private func setSelected(bullet : CAShapeLayer, isSelected : Bool){
+        bullet.opacity = (isSelected) ? 1.0 : opacity;
+        bullet.transform = CATransform3DMakeScale((isSelected) ? 1.0 : minScale, (isSelected) ? 1.0 : minScale, 1.0);
+    }
+    
     /*
     // MARK: - Navigation
 

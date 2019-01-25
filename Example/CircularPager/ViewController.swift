@@ -14,7 +14,11 @@ class ViewController: CircularPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        self.viewControllers = ["one", "two", "three"];
+        self.viewControllers = [
+            self.storyboard?.instantiateViewController(withIdentifier: "one"),
+            self.storyboard?.instantiateViewController(withIdentifier: "two"),
+            self.storyboard?.instantiateViewController(withIdentifier: "three")
+            ] as! [UIViewController];
     }
 
     override func didReceiveMemoryWarning() {

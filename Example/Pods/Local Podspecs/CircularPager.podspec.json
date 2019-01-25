@@ -18,5 +18,11 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CircularPager/Classes/**/*"
+  "source_files": "CircularPager/Classes/**/*",
+  "resource_bundles": {
+    "CircularPager": [
+      "CircularPager/Assets/*.png",
+      "CircularPager/Assets/*.ttf"
+    ]
+  }
 }

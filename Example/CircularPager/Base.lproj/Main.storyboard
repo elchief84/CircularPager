@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,85 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                            <color key="value" name="Secondary"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
+                            <color key="value" red="0.42352941179999998" green="0.57647058819999997" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                            <color key="value" name="Secondary"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="111" y="121"/>
+        </scene>
+        <!--First Controller-->
+        <scene sceneID="Cip-tA-gKb">
+            <objects>
+                <viewController storyboardIdentifier="one" title="First Controller" id="XwD-V0-lTj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R1O-iu-7sj"/>
+                        <viewControllerLayoutGuide type="bottom" id="edj-SX-RHd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XVZ-kz-QGS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.23137254901960785" green="0.59999999999999998" blue="0.9882352941176471" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aNw-hZ-qxo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-529" y="870"/>
+        </scene>
+        <!--Second Controller-->
+        <scene sceneID="7TB-nw-UUo">
+            <objects>
+                <viewController storyboardIdentifier="two" title="Second Controller" id="vvp-Mz-ljn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uwU-Ra-8ZA"/>
+                        <viewControllerLayoutGuide type="bottom" id="woR-hG-n2Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ed8-ri-PPV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVu-DE-1rs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="226" y="869"/>
+        </scene>
+        <!--Third Controller-->
+        <scene sceneID="kzh-lB-IYl">
+            <objects>
+                <viewController storyboardIdentifier="three" title="Third Controller" id="pbe-ze-8Tf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2zh-7N-AYB"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1U-5x-jyv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZRQ-Xj-Yuv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKE-ZS-ePH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="869"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Secondary">
+            <color red="0.30196078430000001" green="0.2901960784" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.30196078430000001" green="0.2901960784" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

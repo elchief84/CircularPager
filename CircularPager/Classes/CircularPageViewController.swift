@@ -28,6 +28,7 @@ open class CircularPageViewController: UIViewController {
     private var titleLabel : UILabel = UILabel.init();
     private var tmpViewControllers : [UIViewController] = [];
     private var pagerControlView : UIView?;
+    private var contentsContainerView : UIView?;
     private var radius : CGFloat = 0.0;
     private var bulletsOnCircle : Int = 12;
     private var angle : Double = 0.0;
@@ -70,10 +71,18 @@ open class CircularPageViewController: UIViewController {
         
         if(viewControllers.count > 0){
             titleLabel.text = viewControllers[currentPageIndex].title;
-            
-            let tmp : UIViewController = self.viewControllers[currentPageIndex];
-            self.view.insertSubview(tmp.view, at: 0);
-            self.addChildViewController(tmp);
+        }
+        
+        contentsContainerView = UIView.init(frame: self.view.bounds);
+        self.contentsContainerView!.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
+        self.view.insertSubview(contentsContainerView!, at: 0);
+        var tmpView : UIView?;
+        for index : Int in 0..<bulletsOnCircle {
+            tmpView = UIView.init(frame: self.view.bounds);
+            tmpView!.backgroundColor = UIColor.red;
+            tmpView!.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
+            tmpView!.transform = self.view.transform.rotated(by: CGFloat(NSNumber.init(value: Double.init(index) * angle).floatValue));
+            contentsContainerView!.insertSubview(tmpView!, at: 0);
         }
     }
     
@@ -187,24 +196,7 @@ open class CircularPageViewController: UIViewController {
             self.changeSelectedPage(index: index);
             direction = -1;
         }
-        
-        if(viewControllers.count > 0){
-            let enter : UIViewController = self.viewControllers[currentPageIndex % self.viewControllers.count];
-            let exit = self.view.subviews[0];
-            
-            exit.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
-            self.view.insertSubview(enter.view, at: 1);
-            self.addChildViewController(enter);
-            enter.view.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
-            enter.view.transform = enter.view.transform.rotated(by: CGFloat(-self.angle * Double(direction)));
-            UIView.animate(withDuration: 0.3, animations: {
-                exit.transform = exit.transform.rotated(by: CGFloat(self.angle * Double(direction)));
-                enter.view.transform = enter.view.transform.rotated(by: CGFloat(self.angle * Double(direction)));
-            }) { (success) in
-                exit.removeFromSuperview();
-            }
-        }
-        
+
         UIView.animate(withDuration: 0.15, animations: {
             self.titleLabel.alpha = 0.0;
         }) { (success) in
@@ -231,6 +223,7 @@ open class CircularPageViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3) {
             self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
+            self.contentsContainerView!.transform = self.view.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
         }
     }
     

@@ -79,15 +79,42 @@ open class CircularPageViewController: UIViewController {
         var tmpView : UIView?;
         for index : Int in 0..<bulletsOnCircle {
             tmpView = UIView.init(frame: self.view.bounds);
-            tmpView!.backgroundColor = UIColor.red;
             tmpView!.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
             tmpView!.transform = self.view.transform.rotated(by: CGFloat(NSNumber.init(value: Double.init(index) * angle).floatValue));
+            tmpView!.tag = index + 1;
             contentsContainerView!.insertSubview(tmpView!, at: 0);
         }
+        self.arrangeControllers();
+    }
+    
+    private func arrangeControllers() {
+        if self.viewControllers.count == 0 {
+            return;
+        }
+        
+        let currentView : UIView = contentsContainerView!.viewWithTag(1 + currentPageIndex)!;
+        let nextView : UIView = contentsContainerView!.viewWithTag(1 + ((currentPageIndex + 1) % bulletsOnCircle))!;
+        let prevView : UIView = contentsContainerView!.viewWithTag(1 + (((currentPageIndex - 1) < 0) ? bulletsOnCircle-1 : currentPageIndex - 1))!;
+        
+        for tmp : UIView in currentView.subviews {
+            tmp.removeFromSuperview();
+        }
+        currentView.addSubview(self.viewControllers[currentPageIndex % self.viewControllers.count].view);
+        
+        for tmp : UIView in nextView.subviews {
+            tmp.removeFromSuperview();
+        }
+        nextView.addSubview(self.viewControllers[(currentPageIndex + 1) % self.viewControllers.count].view);
+        
+        for tmp : UIView in prevView.subviews {
+            tmp.removeFromSuperview();
+        }
+        prevView.addSubview(self.viewControllers[((currentPageIndex - 1) < 0) ? self.viewControllers.count-1 : (currentPageIndex - 1) % self.viewControllers.count].view);
     }
     
     private func invalidatePager() -> Void {
         pagerControlView?.removeFromSuperview();
+        contentsContainerView?.removeFromSuperview();
         self.setup();
     }
     
@@ -205,6 +232,7 @@ open class CircularPageViewController: UIViewController {
             }
             UIView.animate(withDuration: 0.15, animations: {
                 self.titleLabel.alpha = 1.0;
+                self.arrangeControllers();
             })
         }
     }
@@ -223,7 +251,7 @@ open class CircularPageViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3) {
             self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
-            self.contentsContainerView!.transform = self.view.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
+            self.contentsContainerView!.transform = self.contentsContainerView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
         }
     }
     

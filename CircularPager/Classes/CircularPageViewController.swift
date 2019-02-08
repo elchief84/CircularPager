@@ -25,9 +25,10 @@ open class CircularPageViewController: UIViewController {
     @IBInspectable var titleColor : UIColor = UIColor.init(hexString: "#000000");
     @IBInspectable var titleFontName : String = "Exo-Bold";
     
-    private var titleLabel : UILabel = UILabel.init();
+    // private var titleLabel : UILabel = UILabel.init();
     private var tmpViewControllers : [UIViewController] = [];
     private var pagerControlView : UIView?;
+    private var titlesView : UIView?;
     private var contentsContainerView : UIView?;
     private var radius : CGFloat = 0.0;
     private var bulletsOnCircle : Int = 12;
@@ -60,9 +61,10 @@ open class CircularPageViewController: UIViewController {
     private func setup() -> Void {
         self.currentPageIndex = 0;
         self.drawCirclePager();
+        self.drawCircleTitles();
         self.drawBullets();
         
-        titleLabel.frame = CGRect.init(x: 30, y: (pagerControlView?.frame.origin.y)! - 90, width: self.view.frame.size.width - 60, height: 80);
+        /*titleLabel.frame = CGRect.init(x: 30, y: (pagerControlView?.frame.origin.y)! - 90, width: self.view.frame.size.width - 60, height: 80);
         titleLabel.textAlignment = NSTextAlignment.center;
         
         titleLabel.textColor = titleColor;
@@ -71,7 +73,7 @@ open class CircularPageViewController: UIViewController {
         
         if(viewControllers.count > 0){
             titleLabel.text = viewControllers[currentPageIndex].title;
-        }
+        }*/
         
         contentsContainerView = UIView.init(frame: self.view.bounds);
         self.contentsContainerView!.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 2.5));
@@ -84,6 +86,7 @@ open class CircularPageViewController: UIViewController {
             tmpView!.tag = index + 1;
             contentsContainerView!.insertSubview(tmpView!, at: 0);
         }
+        
         self.arrangeControllers();
     }
     
@@ -96,25 +99,38 @@ open class CircularPageViewController: UIViewController {
         let nextView : UIView = contentsContainerView!.viewWithTag(1 + ((currentPageIndex + 1) % bulletsOnCircle))!;
         let prevView : UIView = contentsContainerView!.viewWithTag(1 + (((currentPageIndex - 1) < 0) ? bulletsOnCircle-1 : currentPageIndex - 1))!;
         
+        let currentController : UIViewController = self.viewControllers[currentPageIndex % self.viewControllers.count];
         for tmp : UIView in currentView.subviews {
             tmp.removeFromSuperview();
         }
-        currentView.addSubview(self.viewControllers[currentPageIndex % self.viewControllers.count].view);
+        currentView.addSubview(currentController.view);
         
+        let nextController : UIViewController = self.viewControllers[(currentPageIndex + 1) % self.viewControllers.count];
         for tmp : UIView in nextView.subviews {
             tmp.removeFromSuperview();
         }
-        nextView.addSubview(self.viewControllers[(currentPageIndex + 1) % self.viewControllers.count].view);
+        nextView.addSubview(nextController.view);
         
+        let prevController : UIViewController = self.viewControllers[((currentPageIndex - 1) < 0) ? self.viewControllers.count-1 : (currentPageIndex - 1) % self.viewControllers.count];
         for tmp : UIView in prevView.subviews {
             tmp.removeFromSuperview();
         }
-        prevView.addSubview(self.viewControllers[((currentPageIndex - 1) < 0) ? self.viewControllers.count-1 : (currentPageIndex - 1) % self.viewControllers.count].view);
+        prevView.addSubview(prevController.view);
+        
+        
+        let currentTitle : UILabel = titlesView!.viewWithTag(101 + (currentPageIndex % 4))! as! UILabel;
+        let nextTitle : UILabel = titlesView!.viewWithTag(101 + ((currentPageIndex + 1) % 4))! as! UILabel;
+        let prevTitle : UILabel = titlesView!.viewWithTag(101 + (((currentPageIndex - 1) < 0) ? 3 : (currentPageIndex - 1)%4))! as! UILabel;
+        
+        currentTitle.text = currentController.title;
+        nextTitle.text = nextController.title;
+        prevTitle.text = prevController.title;
     }
     
     private func invalidatePager() -> Void {
         pagerControlView?.removeFromSuperview();
         contentsContainerView?.removeFromSuperview();
+        titlesView?.removeFromSuperview();
         self.setup();
     }
     
@@ -134,6 +150,47 @@ open class CircularPageViewController: UIViewController {
         
         pagerControlView!.layer.addSublayer(shapeLayer)
         self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: (-1 * Double.pi/2)).floatValue));
+    }
+    
+    private func drawCircleTitles() {
+        titlesView = UIView(frame: CGRect(x: -100, y: self.view.frame.size.height - 170, width: self.view.frame.size.width + 200, height: self.view.frame.size.width + 200));
+        self.view.addSubview(titlesView!);
+        
+        var tmpLabel : UILabel?;
+        for index : Int in 0..<4 {
+            
+            let width : CGFloat = titlesView!.frame.size.width;
+            var xVal :CGFloat = 0;
+            var yVal :CGFloat = 0;
+            
+            switch index {
+            case 0:
+                xVal = 0; yVal = 0; break;
+            case 1:
+                xVal = width; yVal = 0; break;
+            case 2:
+                xVal = width; yVal = width; break;
+            case 3:
+                xVal = 0; yVal = width; break;
+            default:
+                xVal = 0; yVal = 0; break;
+            }
+            
+            tmpLabel = UILabel.init(frame: CGRect.init(
+                x: xVal,
+                y: yVal,
+                width: width,
+                height: 40)
+            );
+            tmpLabel!.setAnchorPoint(anchorPoint: CGPoint(x: 0, y: 0));
+            tmpLabel!.font = UIFont.init(name: titleFontName, size: 24.0);
+            tmpLabel!.textColor = primaryColor;
+            tmpLabel!.textAlignment = NSTextAlignment.center;
+            tmpLabel!.transform = self.view.transform.rotated(by: CGFloat(NSNumber.init(value: Double.init(index) * (Double.pi/2)).floatValue));
+            tmpLabel!.tag = index + 101;
+            
+            self.titlesView!.insertSubview(tmpLabel!, at: 0);
+        }
     }
     
     private func getBulletAtIndex(index : Int) -> CAShapeLayer? {
@@ -224,7 +281,7 @@ open class CircularPageViewController: UIViewController {
             direction = -1;
         }
 
-        UIView.animate(withDuration: 0.15, animations: {
+        /*UIView.animate(withDuration: 0.15, animations: {
             self.titleLabel.alpha = 0.0;
         }) { (success) in
             if(self.viewControllers.count > 0){
@@ -232,26 +289,30 @@ open class CircularPageViewController: UIViewController {
             }
             UIView.animate(withDuration: 0.15, animations: {
                 self.titleLabel.alpha = 1.0;
-                self.arrangeControllers();
             })
-        }
+        }*/
+        self.arrangeControllers();
     }
     
     private func rotate(direction : CircularPagerDirection) {
         var rotAngle : Double = angle;
+        var rotAngleTitle : Double = Double.pi/2;
         
         switch direction {
         case CircularPagerDirection.Right:
             rotAngle = angle * 1 ;
+            rotAngleTitle = Double.pi/2;
             break;
         case CircularPagerDirection.Left:
             rotAngle = angle * -1;
+            rotAngleTitle = Double.pi/2 * -1;
             break;
         }
         
         UIView.animate(withDuration: 0.3) {
             self.pagerControlView!.transform = self.pagerControlView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
             self.contentsContainerView!.transform = self.contentsContainerView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngle).floatValue));
+            self.titlesView!.transform = self.titlesView!.transform.rotated(by: CGFloat(NSNumber.init(value: rotAngleTitle).floatValue));
         }
     }
     
